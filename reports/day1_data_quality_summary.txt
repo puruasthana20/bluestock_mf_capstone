@@ -1,0 +1,44 @@
+DAY 1 DATA QUALITY SUMMARY
+
+1. Dataset Loading
+
+* Successfully loaded all provided datasets.
+* Total datasets discovered in the raw data directory: 10+6= 16 (including downloaded live NAV files).
+* All datasets were readable using Pandas without parsing errors.
+
+2. Fund Master Analysis
+
+* Total schemes: 40
+* Fund houses identified: 10
+* Categories identified: Equity and Debt
+* Sub-categories identified: 12
+* Risk categories identified: Moderate, High, Very High, Low, and Moderately High
+
+3. Missing Value Analysis
+
+* Most datasets contain no missing values.
+* Dataset: 04_monthly_sip_inflows.csv contains 12 missing values in the yoy_growth_pct column.
+* This appears expected because Year-over-Year growth cannot be calculated for the earliest months where previous-year data is unavailable.
+
+4. AMFI Code Validation
+
+* Validation performed between fund_master and nav_history datasets.
+* Result: All AMFI codes present in fund_master exist in nav_history.
+* Missing Codes: 0
+
+5. Data Consistency
+
+* No schema mismatches observed between key datasets.
+* AMFI codes can be used as the primary key for joining multiple datasets.
+* Date columns identified for future conversion to datetime format during preprocessing.
+
+6. Live NAV Data Collection
+
+* Successfully fetched live NAV data from mfapi.in for the required mutual fund schemes.
+* Data saved in raw format for future processing.
+
+DATA QUALITY OBSERVATIONS
+- AMFI Code Validation Passed
+- Missing Codes: 0
+- 04_monthly_sip_inflows.csv contains 12 missing yoy_growth_pct values
+- Missing YoY values likely due to unavailable prior-year comparison data
