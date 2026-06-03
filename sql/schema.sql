@@ -64,3 +64,9 @@ CREATE TABLE fact_aum (
     aum_crore REAL,
     num_schemes INTEGER
 );
+CREATE TABLE dim_date (
+    date DATE PRIMARY KEY,
+    year INTEGER,
+    month INTEGER,
+    quarter INTEGER
+);
