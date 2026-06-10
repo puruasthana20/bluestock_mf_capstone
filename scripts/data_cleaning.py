@@ -1,0 +1,1 @@
+nav_df["date"] = pd.to_datetime(nav_df["date"])
